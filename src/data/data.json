@@ -1,0 +1,158 @@
+[
+    {
+        "id": 1,
+        "question": "What is the simple interest on $5000 at 5% per annum for 3 years?",
+        "options": [
+            "$750",
+            "$800",
+            "$850",
+            "$900"
+        ],
+        "correctAnswer": "$750",
+        "explanation": "Simple Interest = (P * R * T) / 100 = (5000 * 5 * 3) / 100 = $750",
+        "difficulty": "easy"
+    },
+    {
+        "id": 2,
+        "question": "Find the principal if the simple interest for 4 years at 6% per annum is $480.",
+        "options": [
+            "$1800",
+            "$2000",
+            "$2200",
+            "$2400"
+        ],
+        "correctAnswer": "$2000",
+        "explanation": "Simple Interest = (P * R * T) / 100; 480 = (P * 6 * 4) / 100; P = $2000",
+        "difficulty": "medium"
+    },
+    {
+        "id": 3,
+        "question": "At what rate percent per annum will $1200 amount to $1440 in 5 years?",
+        "options": [
+            "3%",
+            "4%",
+            "5%",
+            "6%"
+        ],
+        "correctAnswer": "4%",
+        "explanation": "SI = 1440 - 1200 = $240; R = (SI * 100) / (P * T); R = (240 * 100) / (1200 * 5) = 4%",
+        "difficulty": "medium"
+    },
+    {
+        "id": 4,
+        "question": "A sum becomes double in 10 years at simple interest. Find the rate of interest.",
+        "options": [
+            "10%",
+            "15%",
+            "20%",
+            "25%"
+        ],
+        "correctAnswer": "10%",
+        "explanation": "SI = P; Rate = (SI * 100) / (P * T) = (P * 100) / (P * 10) = 10%",
+        "difficulty": "medium"
+    },
+    {
+        "id": 5,
+        "question": "A sum of $4000 earns $800 as simple interest in 4 years. Find the rate.",
+        "options": [
+            "3%",
+            "4%",
+            "5%",
+            "6%"
+        ],
+        "correctAnswer": "5%",
+        "explanation": "R = (SI * 100) / (P * T) = (800 * 100) / (4000 * 4) = 5%",
+        "difficulty": "easy"
+    },
+    {
+        "id": 6,
+        "question": "What will be the simple interest on $1500 at 7% per annum for 6 years?",
+        "options": [
+            "$600",
+            "$630",
+            "$650",
+            "$700"
+        ],
+        "correctAnswer": "$630",
+        "explanation": "SI = (P * R * T) / 100 = (1500 * 7 * 6) / 100 = $630",
+        "difficulty": "easy"
+    },
+    {
+        "id": 7,
+        "question": "A sum of money becomes $1200 in 3 years and $1500 in 6 years. Find the principal.",
+        "options": [
+            "$900",
+            "$1000",
+            "$1100",
+            "$1200"
+        ],
+        "correctAnswer": "$900",
+        "explanation": "SI for 3 years = $1500 - $1200 = $300; SI per year = $100; P = 1200 - 300 = $900",
+        "difficulty": "hard"
+    },
+    {
+        "id": 8,
+        "question": "What is the time required for a sum of $2500 to earn $750 as simple interest at 5% per annum?",
+        "options": [
+            "4 years",
+            "5 years",
+            "6 years",
+            "7 years"
+        ],
+        "correctAnswer": "6 years",
+        "explanation": "T = (SI * 100) / (P * R) = (750 * 100) / (2500 * 5) = 6 years",
+        "difficulty": "medium"
+    },
+    {
+        "id": 9,
+        "question": "Find the amount if the principal is $3000, rate is 8%, and time is 2 years.",
+        "options": [
+            "$3480",
+            "$3520",
+            "$3600",
+            "$3700"
+        ],
+        "correctAnswer": "$3480",
+        "explanation": "SI = (P * R * T) / 100 = (3000 * 8 * 2) / 100 = $480; Amount = 3000 + 480 = $3480",
+        "difficulty": "easy"
+    },
+    {
+        "id": 10,
+        "question": "If the simple interest on a sum for 7 years at 6% per annum is $420, find the sum.",
+        "options": [
+            "$1000",
+            "$1200",
+            "$1400",
+            "$1500"
+        ],
+        "correctAnswer": "$1000",
+        "explanation": "P = (SI * 100) / (R * T) = (420 * 100) / (6 * 7) = $1000",
+        "difficulty": "medium"
+    },
+    {
+        "id": 11,
+        "question": "If the simple interest on a sum for 7 years at 6% per annum is $420, find the sum.",
+        "options": [
+            "$1000",
+            "$1200",
+            "$1400",
+            "$1500"
+        ],
+        "correctAnswer": "$1000",
+        "explanation": "P = (SI * 100) / (R * T) = (420 * 100) / (6 * 7) = $1000",
+        "difficulty": "medium"
+    }
+    ,{
+        "id": 12,
+        "question": "If the simple interest on a sum for 7 years at 6% per annum is $420, find the sum.",
+        "options": [
+            "$1000",
+            "$1200",
+            "$1400",
+            "$1500"
+        ],
+        "correctAnswer": "$1000",
+        "explanation": "P = (SI * 100) / (R * T) = (420 * 100) / (6 * 7) = $1000",
+        "difficulty": "medium"
+    }
+]
