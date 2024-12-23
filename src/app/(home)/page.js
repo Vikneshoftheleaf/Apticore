@@ -18,8 +18,6 @@ export default function Home() {
   return (
     <div>
 
-
-      <h1>Success</h1>
       <Canvas questions={data} />
 
     </div>
