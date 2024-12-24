@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.sidebar {
+    @apply fixed top-0 left-0 h-full w-64 bg-gray-800 text-white transition-transform transform -translate-x-full;
+  }
+  
+  .sidebar.open {
+    @apply translate-x-0;
+  }
+  
+  .menu-btn {
+    @apply block sm:hidden p-2 bg-gray-700 text-white rounded;
+  }
+  
