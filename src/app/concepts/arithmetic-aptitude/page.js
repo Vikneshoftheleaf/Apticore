@@ -11,7 +11,7 @@ export default function ArithmeticAptitude() {
             <div>
                 <h1 className="text-xl font-semibold">Arithmetic Aptitude</h1>
 
-                <div className="grid grid-cols-2 gap-2 mt-4">
+                <div className="grid lg:grid-cols-2 grid-cols-1 gap-2 mt-4">
                     {
                         topics.map((item, index) => (
 
