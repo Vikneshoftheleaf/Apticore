@@ -1,0 +1,83 @@
+[
+    {
+      "id": 1,
+      "question": "What is the area of a rectangle with length 15 m and width 10 m?",
+      "options": ["120 m²", "150 m²", "130 m²", "140 m²"],
+      "correctAnswer": "150 m²",
+      "explanation": "Area = length × width = 15 × 10 = 150 m².",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 2,
+      "question": "Find the area of a triangle with base 12 cm and height 8 cm.",
+      "options": ["42 cm²", "48 cm²", "52 cm²", "60 cm²"],
+      "correctAnswer": "48 cm²",
+      "explanation": "Area = (1/2) × base × height = (1/2) × 12 × 8 = 48 cm².",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 3,
+      "question": "What is the area of a circle with radius 7 cm? (Use π = 3.14)",
+      "options": ["144.5 cm²", "154 cm²", "162 cm²", "148 cm²"],
+      "correctAnswer": "154 cm²",
+      "explanation": "Area = π × r² = 3.14 × 7 × 7 = 154 cm².",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 4,
+      "question": "Find the area of a parallelogram with base 10 m and height 7 m.",
+      "options": ["70 m²", "75 m²", "80 m²", "85 m²"],
+      "correctAnswer": "70 m²",
+      "explanation": "Area = base × height = 10 × 7 = 70 m².",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 5,
+      "question": "The area of a square is 144 cm². Find the length of its side.",
+      "options": ["10 cm", "12 cm", "14 cm", "16 cm"],
+      "correctAnswer": "12 cm",
+      "explanation": "Side = √144 = 12 cm.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 6,
+      "question": "A rectangular field is 20 m long and 15 m wide. Find its perimeter.",
+      "options": ["60 m", "70 m", "80 m", "90 m"],
+      "correctAnswer": "70 m",
+      "explanation": "Perimeter = 2(length + width) = 2(20 + 15) = 70 m.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 7,
+      "question": "Find the area of a rhombus with diagonals 12 cm and 16 cm.",
+      "options": ["92 cm²", "96 cm²", "98 cm²", "100 cm²"],
+      "correctAnswer": "96 cm²",
+      "explanation": "Area = (1/2) × d1 × d2 = (1/2) × 12 × 16 = 96 cm².",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 8,
+      "question": "A circular garden has a diameter of 14 m. Find its area. (Use π = 3.14)",
+      "options": ["153.86 m²", "154 m²", "150 m²", "157 m²"],
+      "correctAnswer": "153.86 m²",
+      "explanation": "Radius = 14/2 = 7 m. Area = π × r² = 3.14 × 7 × 7 = 153.86 m².",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 9,
+      "question": "What is the area of a trapezium with parallel sides 12 cm and 8 cm, and height 5 cm?",
+      "options": ["50 cm²", "55 cm²", "60 cm²", "65 cm²"],
+      "correctAnswer": "50 cm²",
+      "explanation": "Area = (1/2) × (a + b) × h = (1/2) × (12 + 8) × 5 = 50 cm².",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 10,
+      "question": "Find the area of an equilateral triangle with side 10 cm. (Use √3 = 1.732)",
+      "options": ["42.5 cm²", "43.3 cm²", "44.5 cm²", "45 cm²"],
+      "correctAnswer": "43.3 cm²",
+      "explanation": "Area = (√3/4) × a² = (1.732/4) × 10² = 43.3 cm².",
+      "difficulty": "Hard"
+    }
+  ]
+  

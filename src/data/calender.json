@@ -1,0 +1,83 @@
+[
+    {
+      "id": 1,
+      "question": "What day of the week was January 1, 2000?",
+      "options": ["Monday", "Friday", "Saturday", "Sunday"],
+      "correctAnswer": "Saturday",
+      "explanation": "January 1, 2000, was a Saturday based on the Gregorian calendar calculations.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 2,
+      "question": "If today is Monday, what will be the day after 61 days?",
+      "options": ["Friday", "Saturday", "Sunday", "Monday"],
+      "correctAnswer": "Saturday",
+      "explanation": "61 days mod 7 = 5. 5 days after Monday is Saturday.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 3,
+      "question": "A leap year has how many odd days?",
+      "options": ["1", "2", "3", "0"],
+      "correctAnswer": "2",
+      "explanation": "A leap year has 366 days, giving 52 weeks and 2 odd days.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 4,
+      "question": "What day of the week was August 15, 1947?",
+      "options": ["Thursday", "Friday", "Saturday", "Sunday"],
+      "correctAnswer": "Friday",
+      "explanation": "Using calendar calculations, August 15, 1947, falls on a Friday.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 5,
+      "question": "What is the maximum number of Sundays that can occur in a year?",
+      "options": ["52", "53", "54", "51"],
+      "correctAnswer": "53",
+      "explanation": "A year can have 53 Sundays if it starts on a Sunday or is a leap year starting on a Saturday.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 6,
+      "question": "If March 1 is a Monday, what day will March 31 be?",
+      "options": ["Tuesday", "Wednesday", "Thursday", "Friday"],
+      "correctAnswer": "Wednesday",
+      "explanation": "March has 31 days, so 30 days forward from Monday lands on a Wednesday.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 7,
+      "question": "How many odd days are there in 100 years?",
+      "options": ["5", "6", "0", "1"],
+      "correctAnswer": "5",
+      "explanation": "100 years = 76 ordinary years + 24 leap years = 36576 days, which leaves 5 odd days.",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 8,
+      "question": "What day of the week was December 25, 2020?",
+      "options": ["Wednesday", "Thursday", "Friday", "Saturday"],
+      "correctAnswer": "Friday",
+      "explanation": "December 25, 2020, was calculated to fall on a Friday.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 9,
+      "question": "How many odd days are there in 400 years?",
+      "options": ["0", "1", "2", "3"],
+      "correctAnswer": "0",
+      "explanation": "400 years have exactly 146097 days, which is a multiple of 7, so 0 odd days.",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 10,
+      "question": "If February 29 falls on a Monday, what day will March 1 be?",
+      "options": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+      "correctAnswer": "Tuesday",
+      "explanation": "February 29 is a leap year day, and the next day is March 1, which shifts to Tuesday.",
+      "difficulty": "Easy"
+    }
+  ]
+  

@@ -1,0 +1,83 @@
+[
+    {
+      "id": 1,
+      "question": "The average of 5 numbers is 20. If one number is excluded, the average becomes 18. Find the excluded number.",
+      "options": ["25", "28", "30", "32"],
+      "correctAnswer": "30",
+      "explanation": "Sum of 5 numbers = 5 × 20 = 100. Sum of 4 numbers = 4 × 18 = 72. Excluded number = 100 - 72 = 30.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 2,
+      "question": "The average age of 10 students is 15 years. If a teacher's age is included, the average increases by 1 year. Find the teacher's age.",
+      "options": ["25", "26", "27", "28"],
+      "correctAnswer": "26",
+      "explanation": "Total age of 10 students = 10 × 15 = 150. Total age including teacher = 11 × 16 = 176. Teacher's age = 176 - 150 = 26.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 3,
+      "question": "The average weight of 8 people increases by 2.5 kg when a new person joins. If the average weight of 8 people was 60 kg, find the weight of the new person.",
+      "options": ["80 kg", "82 kg", "85 kg", "88 kg"],
+      "correctAnswer": "82 kg",
+      "explanation": "Initial total weight = 8 × 60 = 480. New total weight = 9 × 62.5 = 562.5. New person’s weight = 562.5 - 480 = 82.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 4,
+      "question": "The average marks obtained by 25 students in an exam is 60. If the highest score is excluded, the average becomes 58. Find the highest score.",
+      "options": ["108", "100", "102", "110"],
+      "correctAnswer": "108",
+      "explanation": "Total marks = 25 × 60 = 1500. After excluding the highest score: 24 × 58 = 1392. Highest score = 1500 - 1392 = 108.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 5,
+      "question": "The average of three consecutive odd numbers is 35. Find the largest number.",
+      "options": ["37", "39", "41", "43"],
+      "correctAnswer": "39",
+      "explanation": "Let the numbers be x, x+2, x+4. Average = (x + x + 2 + x + 4) / 3 = 35. Solving gives x = 33. Largest = 33 + 4 = 39.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 6,
+      "question": "The average salary of 15 employees is $6000. If the salary of one employee is excluded, the average reduces by $200. Find the salary of the excluded employee.",
+      "options": ["8000", "8500", "9000", "9500"],
+      "correctAnswer": "9000",
+      "explanation": "Total salary = 15 × 6000 = 90000. After exclusion: 14 × 5800 = 81200. Excluded salary = 90000 - 81200 = 9000.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 7,
+      "question": "The average age of 6 persons in a room is 30 years. A new person joins, increasing the average by 2 years. Find the age of the new person.",
+      "options": ["42", "44", "46", "48"],
+      "correctAnswer": "44",
+      "explanation": "Total age of 6 persons = 6 × 30 = 180. New total age = 7 × 32 = 224. New person's age = 224 - 180 = 44.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 8,
+      "question": "The average of 11 numbers is 30. If the average of the first 6 numbers is 25 and that of the last 6 numbers is 35, find the 6th number.",
+      "options": ["28", "30", "32", "34"],
+      "correctAnswer": "30",
+      "explanation": "Total = 11 × 30 = 330. Sum of first 6 = 6 × 25 = 150. Sum of last 6 = 6 × 35 = 210. Overlap at 6th number = 150 + 210 - 330 = 30.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 9,
+      "question": "The average of 5 numbers is 40. If each number is increased by 5, find the new average.",
+      "options": ["45", "42", "50", "48"],
+      "correctAnswer": "45",
+      "explanation": "Increasing each by 5 increases the total by 5 × 5 = 25. New average = (200 + 25) / 5 = 45.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 10,
+      "question": "The average weight of 20 boys in a class is 50 kg. The average weight of 10 girls is 45 kg. Find the average weight of all students.",
+      "options": ["47.5 kg", "48 kg", "48.5 kg", "49 kg"],
+      "correctAnswer": "47.5 kg",
+      "explanation": "Total weight = (20 × 50) + (10 × 45) = 1450. Average = 1450 / 30 = 47.5.",
+      "difficulty": "Medium"
+    }
+  ]
+  

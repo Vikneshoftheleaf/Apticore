@@ -1,0 +1,83 @@
+[
+    {
+      "id": 1,
+      "question": "What is the angle between the hour and minute hands of a clock at 3:15?",
+      "options": ["7.5 degrees", "22.5 degrees", "30 degrees", "37.5 degrees"],
+      "correctAnswer": "7.5 degrees",
+      "explanation": "The minute hand moves 6 degrees per minute. At 15 minutes, it is at 90 degrees. The hour hand moves 0.5 degrees per minute. At 15 minutes, it moves 7.5 degrees from 3. Angle = |90 - 97.5| = 7.5 degrees.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 2,
+      "question": "At what time between 4 and 5 will the hands of a clock be together?",
+      "options": ["20 minutes past 4", "21 minutes past 4", "22 minutes past 4", "23 minutes past 4"],
+      "correctAnswer": "21 minutes past 4",
+      "explanation": "The relative speed of the hands is 5.5 degrees per minute. At 4:00, the hour hand is at 120 degrees. Time required = 120 / 5.5 ≈ 21.82 minutes, approximately 21 minutes.",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 3,
+      "question": "What is the angle between the hands of a clock at 2:30?",
+      "options": ["75 degrees", "80 degrees", "85 degrees", "90 degrees"],
+      "correctAnswer": "75 degrees",
+      "explanation": "At 2:30, minute hand is at 180 degrees, and the hour hand is at 75 degrees. Angle = |180 - 75| = 75 degrees.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 4,
+      "question": "At what time between 5 and 6 will the hands of a clock be at right angles?",
+      "options": ["18 minutes past 5", "20 minutes past 5", "21 minutes past 5", "22 minutes past 5"],
+      "correctAnswer": "21 minutes past 5",
+      "explanation": "At 5:00, the hour hand is at 150 degrees. The hands are at right angles when they are 90 degrees apart. Time required = 90 / 5.5 ≈ 21 minutes.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 5,
+      "question": "At what time between 6 and 7 will the hands of a clock be in the same straight line?",
+      "options": ["32.73 minutes past 6", "30 minutes past 6", "28.5 minutes past 6", "33.5 minutes past 6"],
+      "correctAnswer": "32.73 minutes past 6",
+      "explanation": "Straight line means 180 degrees. Hour hand is at 180 degrees at 6:00. Time = 180 / 5.5 ≈ 32.73 minutes.",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 6,
+      "question": "At what time between 8 and 9 will the hands of a clock be at right angles?",
+      "options": ["20 minutes past 8", "21 minutes past 8", "22 minutes past 8", "23 minutes past 8"],
+      "correctAnswer": "22 minutes past 8",
+      "explanation": "Right angles occur at 90 degrees. Time = 90 / 5.5 ≈ 22 minutes.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 7,
+      "question": "What is the angle between the hands of a clock at 10:15?",
+      "options": ["52.5 degrees", "55 degrees", "57.5 degrees", "60 degrees"],
+      "correctAnswer": "52.5 degrees",
+      "explanation": "Minute hand is at 90 degrees. Hour hand is at 307.5 degrees. Angle = |307.5 - 90| = 52.5 degrees.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 8,
+      "question": "At what time between 7 and 8 will the hands of a clock coincide?",
+      "options": ["35 minutes past 7", "36 minutes past 7", "37 minutes past 7", "38 minutes past 7"],
+      "correctAnswer": "38 minutes past 7",
+      "explanation": "Coincide means 0 degrees. Hour hand is at 210 degrees. Time = 210 / 5.5 ≈ 38 minutes.",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 9,
+      "question": "At what time between 9 and 10 will the hands of a clock be opposite to each other?",
+      "options": ["45 minutes past 9", "46 minutes past 9", "47 minutes past 9", "48 minutes past 9"],
+      "correctAnswer": "47 minutes past 9",
+      "explanation": "Opposite means 180 degrees apart. Time = 180 / 5.5 ≈ 47 minutes.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 10,
+      "question": "At what time between 2 and 3 will the hands of a clock be at right angles?",
+      "options": ["15 minutes past 2", "16 minutes past 2", "17 minutes past 2", "18 minutes past 2"],
+      "correctAnswer": "16 minutes past 2",
+      "explanation": "Right angle means 90 degrees apart. Time = 90 / 5.5 ≈ 16 minutes.",
+      "difficulty": "Medium"
+    }
+  ]
+  

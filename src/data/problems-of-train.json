@@ -1,0 +1,83 @@
+[
+    {
+      "id": 1,
+      "question": "A train 200 meters long is running at a speed of 60 km/hr. In what time will it pass a man running at 6 km/hr in the same direction?",
+      "options": ["10 sec", "12 sec", "15 sec", "18 sec"],
+      "correctAnswer": "12 sec",
+      "explanation": "Relative speed = (60 - 6) km/hr = 54 km/hr = 54 * (5/18) m/s = 15 m/s. Time = 200 / 15 = 12 sec.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 2,
+      "question": "Two trains of lengths 120 m and 100 m are running in opposite directions with speeds of 40 km/hr and 50 km/hr. How long will they take to cross each other?",
+      "options": ["8 sec", "10 sec", "12 sec", "15 sec"],
+      "correctAnswer": "10 sec",
+      "explanation": "Relative speed = (40 + 50) km/hr = 90 km/hr = 25 m/s. Total length = 120 + 100 = 220 m. Time = 220 / 25 = 10 sec.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 3,
+      "question": "A train 150 m long passes a platform of 100 m in 15 seconds. What is the speed of the train?",
+      "options": ["40 km/hr", "45 km/hr", "50 km/hr", "60 km/hr"],
+      "correctAnswer": "60 km/hr",
+      "explanation": "Total distance = 150 + 100 = 250 m. Speed = 250 / 15 = 16.67 m/s = 60 km/hr.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 4,
+      "question": "A train running at 72 km/hr crosses a pole in 6 seconds. Find the length of the train.",
+      "options": ["100 m", "110 m", "120 m", "150 m"],
+      "correctAnswer": "120 m",
+      "explanation": "Speed = 72 * (5/18) = 20 m/s. Length = 20 * 6 = 120 m.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 5,
+      "question": "Two trains are moving in the same direction at 50 km/hr and 30 km/hr. The faster train crosses a man in the slower train in 18 seconds. Find the length of the faster train.",
+      "options": ["100 m", "120 m", "150 m", "180 m"],
+      "correctAnswer": "100 m",
+      "explanation": "Relative speed = (50 - 30) km/hr = 20 km/hr = 20 * (5/18) = 5.56 m/s. Length = 5.56 * 18 = 100 m.",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 6,
+      "question": "A train 180 m long crosses a man walking at 6 km/hr in the opposite direction in 6 seconds. Find the speed of the train.",
+      "options": ["54 km/hr", "60 km/hr", "72 km/hr", "80 km/hr"],
+      "correctAnswer": "60 km/hr",
+      "explanation": "Relative speed = Distance/Time = 180/6 = 30 m/s = 108 km/hr. Speed of train = 108 - 6 = 60 km/hr.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 7,
+      "question": "A train crosses a 400 m long bridge in 20 seconds. If the speed of the train is 72 km/hr, find its length.",
+      "options": ["200 m", "300 m", "400 m", "500 m"],
+      "correctAnswer": "200 m",
+      "explanation": "Speed = 72 * (5/18) = 20 m/s. Distance covered = 20 * 20 = 400 m. Train length = 400 - 400 = 200 m.",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 8,
+      "question": "Two trains 120 m and 80 m long are running in the same direction at 60 km/hr and 40 km/hr. How long will the faster train take to cross the slower train?",
+      "options": ["16 sec", "18 sec", "20 sec", "22 sec"],
+      "correctAnswer": "18 sec",
+      "explanation": "Relative speed = (60 - 40) = 20 km/hr = 20 * (5/18) = 5.56 m/s. Total length = 120 + 80 = 200 m. Time = 200 / 5.56 = 18 sec.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 9,
+      "question": "A train running at 90 km/hr crosses a platform 150 m long in 15 seconds. Find the length of the train.",
+      "options": ["200 m", "225 m", "250 m", "275 m"],
+      "correctAnswer": "225 m",
+      "explanation": "Speed = 90 * (5/18) = 25 m/s. Distance = 25 * 15 = 375 m. Train length = 375 - 150 = 225 m.",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 10,
+      "question": "A train 180 m long crosses another train 120 m long running in opposite direction at 54 km/hr and 72 km/hr in 12 seconds. Find their relative speed.",
+      "options": ["25 m/s", "30 m/s", "35 m/s", "40 m/s"],
+      "correctAnswer": "35 m/s",
+      "explanation": "Relative speed = (54 + 72) * (5/18) = 35 m/s.",
+      "difficulty": "Medium"
+    }
+  ]
+  

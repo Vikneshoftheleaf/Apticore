@@ -1,0 +1,83 @@
+[
+    {
+      "id": 1,
+      "question": "The present age of a father is three times that of his son. After 5 years, the father's age will be twice that of his son. What is the present age of the son?",
+      "options": ["10 years", "15 years", "20 years", "25 years"],
+      "correctAnswer": "10 years",
+      "explanation": "Let the son's present age be x. Then, father's present age = 3x. After 5 years: 3x + 5 = 2(x + 5). Solving gives x = 10.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 2,
+      "question": "A man is 24 years older than his son. In two years, his age will be twice that of his son. Find the son's present age.",
+      "options": ["20 years", "22 years", "23 years", "24 years"],
+      "correctAnswer": "22 years",
+      "explanation": "Let son's present age be x. Then, man's age = x + 24. In 2 years: (x + 24 + 2) = 2(x + 2). Solving gives x = 22.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 3,
+      "question": "The average age of a family of 5 members is 24 years. If the age of the youngest member is 8 years, find the average age of the family excluding the youngest member.",
+      "options": ["28 years", "30 years", "32 years", "34 years"],
+      "correctAnswer": "30 years",
+      "explanation": "Total age = 5 × 24 = 120 years. Excluding youngest: 120 - 8 = 112 years. Average = 112 / 4 = 30 years.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 4,
+      "question": "The sum of the ages of a father and son is 60 years. After 10 years, the father's age will be twice that of his son. What is the present age of the son?",
+      "options": ["15 years", "20 years", "25 years", "30 years"],
+      "correctAnswer": "20 years",
+      "explanation": "Let son's age be x. Then, father's age = 60 - x. After 10 years: (60 - x + 10) = 2(x + 10). Solving gives x = 20.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 5,
+      "question": "The present age of a mother is three times that of her daughter. After 12 years, the mother’s age will be twice that of her daughter. What is the present age of the daughter?",
+      "options": ["12 years", "14 years", "16 years", "18 years"],
+      "correctAnswer": "12 years",
+      "explanation": "Let daughter's age be x. Then mother's age = 3x. After 12 years: 3x + 12 = 2(x + 12). Solving gives x = 12.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 6,
+      "question": "The sum of the ages of 4 children born at intervals of 4 years each is 64 years. What is the age of the youngest child?",
+      "options": ["8 years", "6 years", "10 years", "4 years"],
+      "correctAnswer": "8 years",
+      "explanation": "Let the youngest be x. Then, x + (x + 4) + (x + 8) + (x + 12) = 64. Solving gives x = 8.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 7,
+      "question": "A father said to his son, 'I was as old as you are at present at the time of your birth.' If the father is 38 years old now, what was the son's age 5 years ago?",
+      "options": ["14 years", "15 years", "16 years", "17 years"],
+      "correctAnswer": "14 years",
+      "explanation": "Let son's age be x. Then father was x at son's birth. Current age = x + x = 38. Solving gives x = 19. 5 years ago = 19 - 5 = 14.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 8,
+      "question": "The ratio of the ages of two persons is 4:5. After 6 years, the ratio will be 5:6. Find their present ages.",
+      "options": ["16 and 20", "24 and 30", "20 and 25", "28 and 35"],
+      "correctAnswer": "20 and 25",
+      "explanation": "Let their ages be 4x and 5x. After 6 years: (4x + 6) / (5x + 6) = 5 / 6. Solving gives x = 5.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 9,
+      "question": "The sum of the ages of a woman and her daughter is 50 years. The difference of their ages is 22 years. Find the age of the daughter.",
+      "options": ["14 years", "15 years", "16 years", "17 years"],
+      "correctAnswer": "14 years",
+      "explanation": "Let daughter's age be x. Then woman's age = 50 - x. Solving x - (50 - x) = 22 gives x = 14.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 10,
+      "question": "A man is 4 times as old as his son. After 10 years, he will be 3 times as old as his son. What is the present age of the son?",
+      "options": ["8 years", "10 years", "12 years", "14 years"],
+      "correctAnswer": "10 years",
+      "explanation": "Let son's age be x. Then man's age = 4x. After 10 years: 4x + 10 = 3(x + 10). Solving gives x = 10.",
+      "difficulty": "Medium"
+    }
+  ]
+  
