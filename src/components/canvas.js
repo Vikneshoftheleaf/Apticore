@@ -9,7 +9,34 @@ export default function Canvas({ topic, questions }) {
     const [currentPage, setCurrentPage] = useState(1);
     const [currentQuestions, setCurrentQuestions] = useState([]);
     const [selection, setselection] = useState("")
+    const [ansData, setansData] = useState({})
+    const [savedQuestion, setSavedQuestion] = useState({})
     const questionsPerPage = 10;
+
+    useEffect(() => {
+        if (localStorage.getItem("questions") === null) {
+            // Key doesn't exist, create it with initial value
+            const initialData = {};
+            localStorage.setItem("questions", JSON.stringify(initialData));
+            console.log("Key created:", initialData);
+        } else {
+            // Key exists, retrieve and log it
+            const existingData = JSON.parse(localStorage.getItem("questions"));
+            setansData(existingData)
+        }
+
+        if (localStorage.getItem("savedQuestion") === null) {
+            // Key doesn't exist, create it with initial value
+            const initialData = {};
+            localStorage.setItem("savedQuestion", JSON.stringify(initialData));
+            console.log("Key created:", initialData);
+        } else {
+            // Key exists, retrieve and log it
+            const existingData = JSON.parse(localStorage.getItem("savedQuestion"))
+            setSavedQuestion(existingData)
+        }
+    }, [ansData, savedQuestion])
+
 
 
     // Pagination Logic
@@ -25,6 +52,21 @@ export default function Canvas({ topic, questions }) {
             ...prev,
             [questionId]: option === correctAnswer ? 'Correct!' : 'Wrong!'
         }));
+        if (`ans-${topic}` in ansData) {
+            if (!(questionId in ansData[`ans-${topic}`])) {
+                ansData[`ans-${topic}`].push(questionId)
+                localStorage.setItem("questions", JSON.stringify(ansData))
+
+            }
+        }
+        else {
+            ansData[`ans-${topic}`] = []
+            if (!(questionId in ansData[`ans-${topic}`])) {
+                ansData[`ans-${topic}`].push(questionId)
+                localStorage.setItem("questions", JSON.stringify(ansData))
+            }
+
+        }
     };
 
     const toggleExplanation = (questionId) => {
@@ -41,12 +83,31 @@ export default function Canvas({ topic, questions }) {
         }));
     };
 
+    const saveQuestion = (questionId) => {
+        if (`save-${topic}` in savedQuestion) {
+            if (!(questionId in savedQuestion[`save-${topic}`])) {
+                savedQuestion[`save-${topic}`].push(questionId)
+                localStorage.setItem("savedQuestion", JSON.stringify(savedQuestion))
+
+            }
+        }
+        else {
+            savedQuestion[`save-${topic}`] = []
+            if (!(questionId in savedQuestion[`save-${topic}`])) {
+                savedQuestion[`save-${topic}`].push(questionId)
+                localStorage.setItem("savedQuestion", JSON.stringify(savedQuestion))
+
+            }
+
+        }
+
+    }
+
     const handlePageChange = (pageNumber) => {
         setCurrentPage(pageNumber);
     };
 
-    function handleReport(e)
-    {
+    function handleReport(e) {
         e.preventDefault()
     }
 
@@ -126,11 +187,12 @@ export default function Canvas({ topic, questions }) {
                                 </svg>
                             </button>
 
-                            <button className="bg-green-50 p-2 text-green-800 focus:ring-1 focus:ring-green-500 rounded-md">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bookmark-check" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0" />
-                                    <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z" />
-                                </svg>
+                            <button onClick={() => saveQuestion(question.id)} className="bg-green-50 p-2 text-green-800 focus:ring-1 focus:ring-green-500 rounded-md">
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bookmark-check" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0" />
+                                        <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z" />
+                                    </svg>
+
                             </button>
 
                         </div>
@@ -143,9 +205,9 @@ export default function Canvas({ topic, questions }) {
                             {question.question}
                         </p>
                         <br />
-                        <form onClick={(e)=>{handleReport(e)}} className="flex flex-col gap-2" >
-                            <input  type="text" id="success" class="bg-green-50 border rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-green-500" placeholder="your@gmail.com" required/>
-                            <textarea  name="" id="" cols="30" rows="8" className="bg-green-50 border focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-green-500 resize-none rounded-md" placeholder="Whats Wrong with this Question?"></textarea>
+                        <form onClick={(e) => { handleReport(e) }} className="flex flex-col gap-2" >
+                            <input type="text" id="success" class="bg-green-50 border rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-green-500" placeholder="your@gmail.com" required />
+                            <textarea name="" id="" cols="30" rows="8" className="bg-green-50 border focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-green-500 resize-none rounded-md" placeholder="Whats Wrong with this Question?"></textarea>
                             <button type="submit" className="px-4 py-2 rounded-md bg-green-800 text-white">Send</button>
 
                         </form>

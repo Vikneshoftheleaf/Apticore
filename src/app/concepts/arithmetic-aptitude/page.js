@@ -15,6 +15,8 @@ export default function ArithmeticAptitude() {
                     {
                         topics.map((item, index) => (
 
+                            <div>
+
                             <Link key={index} href={`/concepts/arithmetic-aptitude/${item.replaceAll(" ", "-").toLowerCase()}`} className="inline-flex gap-2 items-center px-4 py-2 hover:bg-yellow-50 rounded-md hover:text-green-800 w-full">
                                 <span className="text-yellow-400">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-folder-fill" viewBox="0 0 16 16">
@@ -25,7 +27,10 @@ export default function ArithmeticAptitude() {
                                 <span>
                                     {item}
                                 </span>
+                                
                             </Link>
+
+                            </div>
                         ))
                     }
                 </div>
