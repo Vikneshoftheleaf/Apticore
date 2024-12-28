@@ -13,29 +13,7 @@ export default function Canvas({ topic, questions }) {
     const [savedQuestion, setSavedQuestion] = useState({})
     const questionsPerPage = 10;
 
-    useEffect(() => {
-        if (localStorage.getItem("questions") === null) {
-            // Key doesn't exist, create it with initial value
-            const initialData = {};
-            localStorage.setItem("questions", JSON.stringify(initialData));
-            console.log("Key created:", initialData);
-        } else {
-            // Key exists, retrieve and log it
-            const existingData = JSON.parse(localStorage.getItem("questions"));
-            setansData(existingData)
-        }
 
-        if (localStorage.getItem("savedQuestion") === null) {
-            // Key doesn't exist, create it with initial value
-            const initialData = {};
-            localStorage.setItem("savedQuestion", JSON.stringify(initialData));
-            console.log("Key created:", initialData);
-        } else {
-            // Key exists, retrieve and log it
-            const existingData = JSON.parse(localStorage.getItem("savedQuestion"))
-            setSavedQuestion(existingData)
-        }
-    }, [ansData, savedQuestion])
 
 
 
@@ -83,25 +61,7 @@ export default function Canvas({ topic, questions }) {
         }));
     };
 
-    const saveQuestion = (questionId) => {
-        if (`save-${topic}` in savedQuestion) {
-            if (!(questionId in savedQuestion[`save-${topic}`])) {
-                savedQuestion[`save-${topic}`].push(questionId)
-                localStorage.setItem("savedQuestion", JSON.stringify(savedQuestion))
-
-            }
-        }
-        else {
-            savedQuestion[`save-${topic}`] = []
-            if (!(questionId in savedQuestion[`save-${topic}`])) {
-                savedQuestion[`save-${topic}`].push(questionId)
-                localStorage.setItem("savedQuestion", JSON.stringify(savedQuestion))
-
-            }
-
-        }
-
-    }
+    
 
     const handlePageChange = (pageNumber) => {
         setCurrentPage(pageNumber);
@@ -112,10 +72,10 @@ export default function Canvas({ topic, questions }) {
     }
 
     return (
-        <div>
+        <div className="relative">
             {
                 (topic != null) &&
-                <div className="px-4">
+                <div className="px-4 bg-white">
                     <div class="flex justify-between mb-1">
                         <span class="text-lg font-medium text-green-700 dark:text-white">{title[0].toUpperCase() + title.substring(1)}</span>
                         <span class="text-bases font-medium text-green-700 dark:text-white">45%</span>
@@ -187,7 +147,7 @@ export default function Canvas({ topic, questions }) {
                                 </svg>
                             </button>
 
-                            <button onClick={() => saveQuestion(question.id)} className="bg-green-50 p-2 text-green-800 focus:ring-1 focus:ring-green-500 rounded-md">
+                            <button className="bg-green-50 p-2 text-green-800 focus:ring-1 focus:ring-green-500 rounded-md">
                                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bookmark-check" viewBox="0 0 16 16">
                                         <path fill-rule="evenodd" d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0" />
                                         <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z" />
