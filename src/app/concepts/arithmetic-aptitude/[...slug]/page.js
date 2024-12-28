@@ -9,6 +9,6 @@ export default function Topic({params})
 {
     const data = getData(params.slug)
     return(
-        <Canvas questions={data}/>
+        <Canvas topic={params.slug} questions={data}/>
     )
 }
