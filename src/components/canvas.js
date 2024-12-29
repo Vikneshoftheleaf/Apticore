@@ -58,16 +58,25 @@ export default function Canvas({ topic, questions }) {
             localStorage.setItem("saved", JSON.stringify({ [topic]: [questionId] }));
             setSavedQuestion(JSON.parse(localStorage.getItem('saved')))
         }
-        if (savedQuestion && !(savedQuestion.hasOwnProperty(topic))) {
+        else if (savedQuestion && !(savedQuestion.hasOwnProperty(topic))) {
             localStorage.setItem("saved", JSON.stringify({ ...savedQuestion, [topic]: [questionId] }));
             setSavedQuestion(JSON.parse(localStorage.getItem('saved')))
         }
 
-        if (savedQuestion && savedQuestion.hasOwnProperty(topic) && !(savedQuestion[topic].includes(questionId))) {
+        else if (savedQuestion && savedQuestion.hasOwnProperty(topic) && !(savedQuestion[topic].includes(questionId))) {
             savedQuestion[topic].push(questionId)
-            localStorage.setItem("saved", JSON.stringify(data));
+            localStorage.setItem("saved", JSON.stringify(savedQuestion));
             setSavedQuestion(JSON.parse(localStorage.getItem('saved')))
         }
+        else if (savedQuestion && savedQuestion.hasOwnProperty(topic) && (savedQuestion[topic].includes(questionId))) {
+            const indexToRemove = savedQuestion[topic].indexOf(questionId);
+            if (indexToRemove > -1) { savedQuestion[topic].splice(indexToRemove, 1); }
+            localStorage.setItem("saved", JSON.stringify(savedQuestion));
+            setSavedQuestion(JSON.parse(localStorage.getItem('saved')))
+
+
+        }
+
 
     }
 
@@ -98,16 +107,16 @@ export default function Canvas({ topic, questions }) {
     return (
         <div className="relative pt-12">
             {
-                (topic && data) &&
+                (topic) &&
                 <div className="p-6 fixed left-0 top-12 right-0 bg-white">
                     <div className="lg:ml-64 md:ml-0 sm:ml-0">
 
                         <div class="flex justify-between mb-1">
                             <span class="text-lg font-medium text-green-700 dark:text-white">{title[0].toUpperCase() + title.substring(1)}</span>
-                            <span class="text-bases font-medium text-green-700 dark:text-white">{(data[topic]) ? ((data[topic].length) / questions.length) * 100 : 0}%</span>
+                            <span class="text-bases font-medium text-green-700 dark:text-white">{(data && data[topic]) ? Math.floor((((data[topic].length)) / questions.length) * 100) : 0}%</span>
                         </div>
                         <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                            <div className={`bg-green-600 h-2.5 rounded-full w-[${(data[topic]) ? ((data[topic].length) / questions.length) * 100 : 0}%]`}></div>
+                            <div className={`bg-green-600 h-2.5 rounded-full w-[${(data && data[topic]) ? Math.floor(((data[topic].length) / questions.length) * 100) : 0}%]`}></div>
                         </div>
                     </div>
 
@@ -175,11 +184,15 @@ export default function Canvas({ topic, questions }) {
                             </button>
 
                             <button onClick={() => saveQuestion(question.id)} className="bg-green-50 p-2 text-green-800 focus:ring-1 focus:ring-green-500 rounded-md">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bookmark-check" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0" />
-                                    <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z" />
-                                </svg>
-
+                                {(savedQuestion && savedQuestion[topic] && savedQuestion[topic].includes(question.id))
+                                    ? <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bookmark-check-fill" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5m8.854-9.646a.5.5 0 0 0-.708-.708L7.5 7.793 6.354 6.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z" />
+                                    </svg>
+                                    : <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bookmark-check" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0" />
+                                        <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z" />
+                                    </svg>
+                                }
                             </button>
 
                         </div>
