@@ -12,6 +12,7 @@ export default function Canvas({ topic, questions }) {
     const [selection, setselection] = useState("")
     const [data, setData] = useState({})
     const [savedQuestion, setSavedQuestion] = useState({})
+    const [reportModal, setReportModal] = useState(false)
     const questionsPerPage = 10;
 
     useEffect(() => {
@@ -102,21 +103,33 @@ export default function Canvas({ topic, questions }) {
 
     function handleReport(e) {
         e.preventDefault()
+        setReportModal(true)
+        setTimeout(() => {
+            setReportModal(false)
+        }, 5000);
+
     }
 
     return (
         <div className="relative pt-12">
             {
                 (topic) &&
-                <div className="p-6 fixed left-0 top-12 right-0 bg-white">
-                    <div className="lg:ml-64 md:ml-0 sm:ml-0">
+                <div className="px-6 pt-6 pb-2 fixed left-0 top-12 border-b border-gray-200 right-0 bg-white">
+                    <div className="lg:ml-64 md:ml-0 sm:ml-0 ">
 
                         <div class="flex justify-between mb-1">
-                            <span class="text-lg font-medium text-green-700 dark:text-white">{title[0].toUpperCase() + title.substring(1)}</span>
+                            <div className="flex gap-2 items-center">
+                                <span class="text-lg font-medium text-green-700 dark:text-white">{title[0].toUpperCase() + title.substring(1)}</span>
+
+                                <span className="font-semibold text-sm text-gray-500">{(data && data[topic]) && (((data[topic].length)) + "/" + questions.length)}</span>
+
+                            </div>
                             <span class="text-bases font-medium text-green-700 dark:text-white">{(data && data[topic]) ? Math.floor((((data[topic].length)) / questions.length) * 100) : 0}%</span>
                         </div>
                         <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                            <div className={`bg-green-600 h-2.5 rounded-full w-[${(data && data[topic]) ? Math.floor(((data[topic].length) / questions.length) * 100) : 0}%]`}></div>
+                            <div className="bg-green-600 h-2.5 rounded-full transition-all ease-in duration-10" style={{ width: `${(data && data[topic]) ? Math.floor(((data[topic].length) / questions.length) * 100) : 0}%` }}></div>
+                        </div>
+                        <div className="flex items-center justify-end mt-2">
                         </div>
                     </div>
 
@@ -199,20 +212,31 @@ export default function Canvas({ topic, questions }) {
 
                     </div>
                     {showExplanation[question.id] && <div className="rounded-md bg-green-50 p-4 w-full"><p ><span className="font-semibold text-green-500">Correct Answer: </span>{question.correctAnswer}</p><br /><p><span className="font-semibold text-green-500">Explanation: </span> <br /> {question.explanation}</p></div>}
-                    {showReport[question.id] && <div className="rounded-md bg-green-50 p-4 w-full">
-                        <p >
-                            <span className="font-semibold text-green-500">Report: </span>
-                            {question.question}
-                        </p>
-                        <br />
-                        <form onClick={(e) => { handleReport(e) }} className="flex flex-col gap-2" >
-                            <input type="text" id="success" class="bg-green-50 border rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-green-500" placeholder="your@gmail.com" required />
-                            <textarea name="" id="" cols="30" rows="8" className="bg-green-50 border focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-green-500 resize-none rounded-md" placeholder="Whats Wrong with this Question?"></textarea>
-                            <button type="submit" className="px-4 py-2 rounded-md bg-green-800 text-white">Send</button>
+                    {showReport[question.id] &&
+                        <div className="rounded-md bg-green-50 p-4 w-full">
+                            <p >
+                                <span className="font-semibold text-green-500">Report: </span>
+                                {question.question}
+                            </p>
+                            <br />
+                            {!(reportModal)
+                                ? <form onSubmit={(e) => { handleReport(e) }} className="flex flex-col gap-2" >
+                                    <input type="email" id="success" class="bg-green-50 border rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-green-500" placeholder="your@gmail.com" required />
+                                    <textarea required name="" id="" cols="30" rows="8" className="bg-green-50 border focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-green-500 resize-none rounded-md" placeholder="Whats Wrong with this Question?"></textarea>
+                                    <button type="submit" className="px-4 py-2 rounded-md bg-green-800 text-white">Send</button>
 
-                        </form>
+                                </form>
+                                : <div className="h-full w-full flex flex-col gap-2 items-center justify-center rounded-md p-4">
+                                    <span className="text-green-800">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-patch-check-fill" viewBox="0 0 16 16">
+                                            <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708" />
+                                        </svg>
+                                    </span>
+                                    <p>Submitted!</p>
+                                </div>
+                            }
 
-                    </div>}
+                        </div>}
 
 
                 </div>
