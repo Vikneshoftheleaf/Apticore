@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react"
 
 export default function Canvas({ topic, questions }) {
+
     const title = (topic != null) && topic.toString().replaceAll("-", " ")
     const [selectedAnswers, setSelectedAnswers] = useState({});
     const [showExplanation, setShowExplanation] = useState({});
@@ -9,11 +10,16 @@ export default function Canvas({ topic, questions }) {
     const [currentPage, setCurrentPage] = useState(1);
     const [currentQuestions, setCurrentQuestions] = useState([]);
     const [selection, setselection] = useState("")
-    const [ansData, setansData] = useState({})
+    const [data, setData] = useState({})
     const [savedQuestion, setSavedQuestion] = useState({})
     const questionsPerPage = 10;
 
-
+    useEffect(() => {
+        const ls = localStorage.getItem("stats")
+        setData((ls) && JSON.parse(ls))
+        const lss = localStorage.getItem("saved")
+        setSavedQuestion((lss) && JSON.parse(lss))
+    }, [])
 
 
 
@@ -26,26 +32,44 @@ export default function Canvas({ topic, questions }) {
 
 
     const handleAnswerClick = (questionId, option, correctAnswer) => {
+        if (!data) {
+            localStorage.setItem("stats", JSON.stringify({ [topic]: [questionId] }));
+            setData(JSON.parse(localStorage.getItem('stats')))
+        }
+        if (data && !(data.hasOwnProperty(topic))) {
+            localStorage.setItem("stats", JSON.stringify({ ...data, [topic]: [questionId] }));
+            setData(JSON.parse(localStorage.getItem('stats')))
+        }
         setSelectedAnswers((prev) => ({
             ...prev,
             [questionId]: option === correctAnswer ? 'Correct!' : 'Wrong!'
         }));
-        if (`ans-${topic}` in ansData) {
-            if (!(questionId in ansData[`ans-${topic}`])) {
-                ansData[`ans-${topic}`].push(questionId)
-                localStorage.setItem("questions", JSON.stringify(ansData))
 
-            }
+        if (data && data.hasOwnProperty(topic) && !(data[topic].includes(questionId))) {
+            data[topic].push(questionId)
+            localStorage.setItem("stats", JSON.stringify(data));
+            setData(JSON.parse(localStorage.getItem('stats')))
         }
-        else {
-            ansData[`ans-${topic}`] = []
-            if (!(questionId in ansData[`ans-${topic}`])) {
-                ansData[`ans-${topic}`].push(questionId)
-                localStorage.setItem("questions", JSON.stringify(ansData))
-            }
 
-        }
     };
+
+    const saveQuestion = (questionId) => {
+        if (!savedQuestion) {
+            localStorage.setItem("saved", JSON.stringify({ [topic]: [questionId] }));
+            setSavedQuestion(JSON.parse(localStorage.getItem('saved')))
+        }
+        if (savedQuestion && !(savedQuestion.hasOwnProperty(topic))) {
+            localStorage.setItem("saved", JSON.stringify({ ...savedQuestion, [topic]: [questionId] }));
+            setSavedQuestion(JSON.parse(localStorage.getItem('saved')))
+        }
+
+        if (savedQuestion && savedQuestion.hasOwnProperty(topic) && !(savedQuestion[topic].includes(questionId))) {
+            savedQuestion[topic].push(questionId)
+            localStorage.setItem("saved", JSON.stringify(data));
+            setSavedQuestion(JSON.parse(localStorage.getItem('saved')))
+        }
+
+    }
 
     const toggleExplanation = (questionId) => {
         setShowExplanation((prev) => ({
@@ -61,7 +85,7 @@ export default function Canvas({ topic, questions }) {
         }));
     };
 
-    
+
 
     const handlePageChange = (pageNumber) => {
         setCurrentPage(pageNumber);
@@ -72,16 +96,19 @@ export default function Canvas({ topic, questions }) {
     }
 
     return (
-        <div className="relative">
+        <div className="relative pt-12">
             {
-                (topic != null) &&
-                <div className="px-4 bg-white">
-                    <div class="flex justify-between mb-1">
-                        <span class="text-lg font-medium text-green-700 dark:text-white">{title[0].toUpperCase() + title.substring(1)}</span>
-                        <span class="text-bases font-medium text-green-700 dark:text-white">45%</span>
-                    </div>
-                    <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                        <div class="bg-green-600 h-2.5 rounded-full w-[45%]"></div>
+                (topic && data) &&
+                <div className="p-6 fixed left-0 top-12 right-0 bg-white">
+                    <div className="lg:ml-64 md:ml-0 sm:ml-0">
+
+                        <div class="flex justify-between mb-1">
+                            <span class="text-lg font-medium text-green-700 dark:text-white">{title[0].toUpperCase() + title.substring(1)}</span>
+                            <span class="text-bases font-medium text-green-700 dark:text-white">{(data[topic]) ? ((data[topic].length) / questions.length) * 100 : 0}%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                            <div className={`bg-green-600 h-2.5 rounded-full w-[${(data[topic]) ? ((data[topic].length) / questions.length) * 100 : 0}%]`}></div>
+                        </div>
                     </div>
 
                 </div>
@@ -147,11 +174,11 @@ export default function Canvas({ topic, questions }) {
                                 </svg>
                             </button>
 
-                            <button className="bg-green-50 p-2 text-green-800 focus:ring-1 focus:ring-green-500 rounded-md">
-                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bookmark-check" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd" d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0" />
-                                        <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z" />
-                                    </svg>
+                            <button onClick={() => saveQuestion(question.id)} className="bg-green-50 p-2 text-green-800 focus:ring-1 focus:ring-green-500 rounded-md">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bookmark-check" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0" />
+                                    <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z" />
+                                </svg>
 
                             </button>
 
