@@ -166,7 +166,7 @@ export default function MemoryTrainingComponent({ questions }) {
 
                     {
                         !(isTimerActive) && timer !=0 &&
-                        <div className="flex w-full justify-between">
+                        <div className="flex w-full justify-between mt-8">
                             <button onClick={() => { (questNo != 0) && setQuestNo(questNo - 1) }} className={`flex gap-2 items-center px-4 py-2 bg-${(questNo == 0 ? "gray-200" : "green-500")} text-${(questNo == 0 ? "gray-800" : "white")} rounded-md`}>
 
                                 <span>
