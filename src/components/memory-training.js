@@ -109,7 +109,7 @@ export default function MemoryTrainingComponent({ questions }) {
 
                                     <ul className="flex flex-wrap gap-2">
                                         {wordsToMemorize.map((word, index) => (
-                                            <li className="px-4 py-2 bg-yellow-100 text-yellow-800 rounded-full" key={index}>{word}</li>
+                                            <li className="px-4 py-2 border-dashed border-2 bg-gray-100 rounded-full" key={index}>{word}</li>
                                         ))}
                                     </ul>
 
