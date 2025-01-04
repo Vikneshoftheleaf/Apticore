@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "question": "You are in a room with three light switches, each controlling one of three light bulbs in another room. You can only enter the other room once. How do you determine which switch controls which bulb?",
+    "explanation": "Turn on the first switch and leave it on for a few minutes. Turn it off and turn on the second switch. Enter the room. The bulb that is warm corresponds to the first switch, the bulb that is on corresponds to the second switch, and the remaining bulb corresponds to the third switch.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2,
+    "question": "A farmer is trying to cross a river with a wolf, a goat, and a cabbage. He can only carry one item at a time. How does he get everything across safely?",
+    "explanation": "First, the farmer takes the goat across and leaves it. Then he goes back and takes the cabbage across but returns with the goat. Next, he takes the wolf across and leaves it with the cabbage. Finally, he returns to get the goat.",
+    "difficulty": "hard"
+  },
+  {
+    "id": 3,
+    "question": "A man builds a house with all four walls facing south. A bear walks past the house. What color is the bear?",
+    "explanation": "The only place where all four walls can face south is the North Pole. Therefore, the bear must be a polar bear, which is white.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 4,
+    "question": "You have a 3-liter jug and a 5-liter jug. How can you measure exactly 4 liters of water?",
+    "explanation": "Fill the 5-liter jug completely. Pour water into the 3-liter jug until it is full, leaving 2 liters in the 5-liter jug. Empty the 3-liter jug and transfer the 2 liters from the 5-liter jug into it. Fill the 5-liter jug again and pour water into the 3-liter jug until it is full. Now exactly 4 liters remain in the 5-liter jug.",
+    "difficulty": "hard"
+  },
+  {
+    "id": 5,
+    "question": "A plane crashes on the border of the United States and Canada. Where do they bury the survivors?",
+    "explanation": "You don't bury survivors. This question tests your ability to pay attention to details and avoid assumptions.",
+    "difficulty": "easy"
+  }
+]

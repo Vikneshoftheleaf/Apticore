@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "question": "A farmer has 17 sheep, and all but 9 run away. How many sheep does the farmer have left?",
+    "explanation": "The phrase 'all but 9' means 9 sheep did not run away. Therefore, the farmer has 9 sheep remaining.",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 2,
+    "question": "You have a 3-liter jug and a 5-liter jug. How can you measure exactly 4 liters of water?",
+    "explanation": "1. Fill the 5-liter jug completely.\n2. Pour water from the 5-liter jug into the 3-liter jug until it is full. This leaves 2 liters in the 5-liter jug.\n3. Empty the 3-liter jug and transfer the 2 liters into it.\n4. Fill the 5-liter jug again and pour water into the 3-liter jug until it is full.\n5. This leaves exactly 4 liters in the 5-liter jug.",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 3,
+    "question": "A man gave one son 10 cents and another son was given a dollar. What time is it?",
+    "explanation": "The question is a riddle. '10 cents' and 'a dollar' can be read as 'ten to one' (12:50). The time is 12:50.",
+    "difficulty": "Hard"
+  },
+  {
+    "id": 4,
+    "question": "You are in a dark room with a candle, a wood stove, and a gas lamp. You only have one match. What do you light first?",
+    "explanation": "You light the match first before you can light anything else.",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 5,
+    "question": "A boat is on a river and has a ladder with 5 rungs. Each rung is 30 cm apart. The bottom rung is 10 cm above the water. If the river rises by 1 meter, how many rungs will be under water?",
+    "explanation": "Since the boat rises with the water level, none of the rungs will be submerged.",
+    "difficulty": "Medium"
+  }
+]

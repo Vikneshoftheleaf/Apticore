@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "question": "A farmer has 17 sheep. All but 9 run away. How many sheep does the farmer have left?",
+    "explanation": "The question states that 'all but 9' sheep run away, which means 9 sheep are left. This question tests logical interpretation and understanding of phrasing.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2,
+    "question": "If you rearrange the letters 'BARBIT', you get the name of a: (a) Animal (b) City (c) Fruit (d) Tool?",
+    "explanation": "Rearranging 'BARBIT' gives 'RABBIT,' which is an animal. This question challenges mental flexibility and pattern recognition.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3,
+    "question": "A clock shows 3:15. What is the angle between the hour and minute hands?",
+    "explanation": "Each hour represents 30 degrees (360 degrees/12). At 3:00, the hour hand is at 90 degrees. By 3:15, the hour hand moves 7.5 degrees (15 minutes × 0.5 degrees/minute). The minute hand is at 90 degrees. The angle is |97.5 - 90| = 7.5 degrees.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 4,
+    "question": "A train is moving at 80 km/h. How far will it travel in 45 minutes?",
+    "explanation": "45 minutes is 3/4 of an hour. Distance = Speed × Time. Distance = 80 × (3/4) = 60 km. This question tests basic arithmetic and time-speed-distance understanding.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 5,
+    "question": "I am a three-digit number. My tens digit is five more than my ones digit, and my hundreds digit is eight less than my tens digit. What number am I?",
+    "explanation": "Let the ones digit be x. Then the tens digit is x + 5, and the hundreds digit is (x + 5) - 8 = x - 3. Combining these, the number is 6x + 50. Testing values, x = 2 gives 152, which satisfies the conditions.",
+    "difficulty": "hard"
+  }
+]

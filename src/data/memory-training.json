@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "words": ["apple", "banana", "cherry", "date", "elderberry", "fig", "grape", "honeydew", "kiwi", "lemon"],
+    "difficulty": "easy",
+    "explanation": "Memorize the sequence of these fruits and recall them in the same order. Focus on grouping similar-sounding words or visualizing them as a fruit basket to enhance recall."
+  },
+  {
+    "id": 2,
+    "words": ["table", "chair", "lamp", "sofa", "rug", "clock", "mirror", "vase", "bookshelf", "curtain", "picture"],
+    "difficulty": "medium",
+    "explanation": "Picture these items in a living room setting. Associating each item with a specific position in the room can help with memorization."
+  },
+  {
+    "id": 3,
+    "words": ["oxygen", "hydrogen", "nitrogen", "helium", "carbon", "neon", "argon", "fluorine", "sulfur", "phosphorus", "chlorine", "krypton"],
+    "difficulty": "hard",
+    "explanation": "Visualize these as elements in the periodic table. Use mnemonics or create an acronym from their symbols to make retention easier."
+  },
+  {
+    "id": 4,
+    "words": ["umbrella", "window", "garden", "library", "notebook", "calendar", "television", "calculator", "keyboard", "monitor", "printer", "speaker"],
+    "difficulty": "medium",
+    "explanation": "Group the words into categories like household items, office supplies, and outdoor items to improve recall through associations."
+  },
+  {
+    "id": 5,
+    "words": ["piano", "guitar", "violin", "drum", "flute", "trumpet", "harp", "saxophone", "clarinet", "accordion", "cello", "trombone", "xylophone"],
+    "difficulty": "hard",
+    "explanation": "Think of these as part of an orchestra and visualize where each instrument is played. Imagining a concert scene can reinforce memory."
+  }
+]
