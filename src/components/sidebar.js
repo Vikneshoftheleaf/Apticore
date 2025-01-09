@@ -1,6 +1,6 @@
 "use client"
 import { useState } from "react"
-
+import { GiEmptyChessboard } from "react-icons/gi";
 import Link from "next/link"
 export default function Sidebar({ children }) {
     const [isOpen, setIsOpen] = useState("-translate-x-full");
@@ -133,8 +133,14 @@ export default function Sidebar({ children }) {
                                 <span class="flex-1 ms-3 whitespace-nowrap">Mental Agility</span>
                             </Link>
                         </li>
+                        <li>
+                            <Link onClick={toggleSidebar} href={"/concepts/learn-chess"} class="hover:text-green-800 flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                                <GiEmptyChessboard size={20}/>
+                                <span class="flex-1 ms-3 whitespace-nowrap">learn Chess</span>
+                            </Link>
+                        </li>
 
-                       
+
 
                     </ul>
                 </div>
