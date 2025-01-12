@@ -37,11 +37,14 @@ export default function QA({ questions }) {
     }
     return (
         <>
-            <div className="relative">
+            <div className="relative w-full">
 
-                <div id={question.id} key={question.id} className="lg:p-8 px-4 py-8 flex flex-col gap-4 bg-white items-start border-b-2">
-                    <div className="flex flex-col items-start gap-4 ">
-                        <span className={`text-sm px-4 py-2 inline-flex rounded-full bg-${(question.difficulty.toLowerCase() == "easy") ? "green" : (question.difficulty.toLowerCase() == "medium") ? "yellow" : "red"}-100 `} >{question.difficulty.charAt(0).toUpperCase() + question.difficulty.slice(1)}</span>
+                <div id={question.id} key={question.id} className="w-full lg:p-8 px-4 py-8 flex flex-col gap-4 bg-white items-start border-b-2">
+                    <div className="flex flex-col items-start gap-4 w-full">
+                        <div className="w-full flex justify-between">
+                            <span className={`text-sm px-4 py-2 inline-flex rounded-full bg-${(question.difficulty.toLowerCase() == "easy") ? "green" : (question.difficulty.toLowerCase() == "medium") ? "yellow" : "red"}-100 `} >{question.difficulty.charAt(0).toUpperCase() + question.difficulty.slice(1)}</span>
+                            <span>{question.id}/{questions.length}</span>
+                        </div>
                         <h2 className="text-lg">{question.question}</h2>
                     </div>
 

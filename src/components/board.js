@@ -9,6 +9,7 @@ const Board = ({ user }) => {
     const [stockfish, setStockfish] = useState(null);
     // Initialize state for storing Stockfish's suggested best move
     const [bestMove, setBestMove] = useState("");
+    const [bestUseMove, setBestuserMove] = useState("")
     const [msg, setmsg] = useState("");
     // useEffect to set up Stockfish as a Web Worker when the component first loads (mounts)
 
@@ -20,7 +21,7 @@ const Board = ({ user }) => {
                 stockfish.postMessage(`position fen ${gameCopy.fen()}`); // Send the board position in FEN format
                 stockfish.postMessage("go depth 15"); // Instruct Stockfish to analyze the position up to a depth of 15 moves
             }
-            else{
+            else {
                 console.log("stockfish not mounted")
             }
         }
@@ -35,7 +36,12 @@ const Board = ({ user }) => {
             // Check if Stockfish has sent a "bestmove" response
             if (message.startsWith("bestmove")) {
                 const move = message.split(" ")[1]; // Extract the best move from the message
-                setBestMove(move); // Save the best move in state to display on the screen
+                if (game.turn() === user[0].toLowerCase()) {
+                    setBestuserMove(move)
+                }
+                else {
+                    setBestMove(move); // Save the best move in state to display on the screen
+                }
             }
         };
         // Clean up the worker when the component is removed from the screen (unmounted)
@@ -52,15 +58,22 @@ const Board = ({ user }) => {
                     from: bestMove.slice(0, 2), // Source square
                     to: bestMove.slice(2, 4),  // Target square
                     promotion: "q",           // Promote to Queen if needed
-                });
+                })
+
+                stockfish.postMessage(`position fen ${game.fen()}`); // Send the board position in FEN format
+                stockfish.postMessage("go depth 15"); // Instruct Stockfish to analyze the position up to a depth of 15 moves
+
+
+
+
                 if (move) {
                     setGame(gameCopy); // Update the game state with the new position
                     if (gameCopy.isCheck()) {
                         setmsg("Check")
                     }
                     if (gameCopy.isCheckmate()) {
-                        (game.turn() == 'w')?setmsg("White win by Check Mate"):setmsg("Black win by Check Mate")
-                    
+                        (game.turn() == 'w') ? setmsg("White win by Check Mate") : setmsg("Black win by Check Mate")
+
                     }
                     if (gameCopy.isDraw()) {
                         setmsg("Draw")
@@ -68,7 +81,6 @@ const Board = ({ user }) => {
                     if (gameCopy.isStalemate()) {
                         setmsg("Stale Mate")
                     }
-                    
                 }
             } catch (error) {
                 console.error("Error applying AI move:", error.message);
@@ -93,8 +105,11 @@ const Board = ({ user }) => {
             if (gameCopy.isCheck()) {
                 setmsg("Check")
             }
+            else {
+                setmsg('')
+            }
             if (gameCopy.isCheckmate()) {
-                (game.turn() == 'w')?setmsg("White win by Check Mate"):setmsg("Black win by Check Mate")
+                (game.turn() == 'w') ? setmsg("White win by Check Mate") : setmsg("Black win by Check Mate")
             }
             if (gameCopy.isDraw()) {
                 setmsg("Draw")
@@ -102,7 +117,7 @@ const Board = ({ user }) => {
             if (gameCopy.isStalemate()) {
                 setmsg("Stale Mate")
             }
-            
+
 
             // If the move is valid, update the main game state with the new position
             setGame(gameCopy);
@@ -121,17 +136,20 @@ const Board = ({ user }) => {
     // Render the component
     return (
         <div className="grid lg:grid-cols-2 grid-cols-1 gap-4">
-            <div className="h-full aspect-square pr-4">
+            <div className="h-full aspect-square pr-4 ">
                 <Chessboard
                     boardOrientation={user}
                     position={game.fen()}         // Set the board position based on the current game state
                     onPieceDrop={onDrop}          // Attach the onDrop function to handle piece moves
+                    customDarkSquareStyle={{ backgroundColor: '#22c55e' }}
+                    customLightSquareStyle={{ backgroundColor: '#f9fafb' }}
+
                 />
             </div>
 
             <div>
                 <h3>Best Move: {bestMove || "Calculating..."}</h3>
-                <h4>{game.turn()}</h4>
+                <h3>User MOve: {bestUseMove || "Wait..."}</h3>
                 <h4>{msg}</h4>
             </div>
         </div>
