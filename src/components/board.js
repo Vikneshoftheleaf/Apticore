@@ -11,15 +11,20 @@ const Board = ({ user }) => {
     const [bestMove, setBestMove] = useState("");
     const [msg, setmsg] = useState("");
     // useEffect to set up Stockfish as a Web Worker when the component first loads (mounts)
+
     useEffect(() => {
         const gameCopy = new Chess(game.fen());
-        if (game.turn() != user[0].toLowerCase()) {
-            if (stockfish) {
+        if (user[0].toLowerCase() != 'w') {
+            console.log("opponent is white")
+            if (stockfish != null) {
                 stockfish.postMessage(`position fen ${gameCopy.fen()}`); // Send the board position in FEN format
                 stockfish.postMessage("go depth 15"); // Instruct Stockfish to analyze the position up to a depth of 15 moves
             }
+            else{
+                console.log("stockfish not mounted")
+            }
         }
-    }, [])
+    }, [stockfish])
     useEffect(() => {
         // Create a new Web Worker for Stockfish from the JavaScript file we downloaded
         const stockfishWorker = new Worker("/stockfish.js");
@@ -51,10 +56,11 @@ const Board = ({ user }) => {
                 if (move) {
                     setGame(gameCopy); // Update the game state with the new position
                     if (gameCopy.isCheck()) {
-                        setmsg("check")
+                        setmsg("Check")
                     }
                     if (gameCopy.isCheckmate()) {
-                        setmsg("Check Mate")
+                        (game.turn() == 'w')?setmsg("White win by Check Mate"):setmsg("Black win by Check Mate")
+                    
                     }
                     if (gameCopy.isDraw()) {
                         setmsg("Draw")
@@ -62,9 +68,7 @@ const Board = ({ user }) => {
                     if (gameCopy.isStalemate()) {
                         setmsg("Stale Mate")
                     }
-                    if(gameCopy.isGameOver()){
-                        setmsg("Game Over")
-                    }
+                    
                 }
             } catch (error) {
                 console.error("Error applying AI move:", error.message);
@@ -90,7 +94,7 @@ const Board = ({ user }) => {
                 setmsg("Check")
             }
             if (gameCopy.isCheckmate()) {
-                setmsg("Check Mate")
+                (game.turn() == 'w')?setmsg("White win by Check Mate"):setmsg("Black win by Check Mate")
             }
             if (gameCopy.isDraw()) {
                 setmsg("Draw")
@@ -98,6 +102,7 @@ const Board = ({ user }) => {
             if (gameCopy.isStalemate()) {
                 setmsg("Stale Mate")
             }
+            
 
             // If the move is valid, update the main game state with the new position
             setGame(gameCopy);
