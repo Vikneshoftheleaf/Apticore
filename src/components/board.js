@@ -69,17 +69,20 @@ const Board = ({ user }) => {
                 if (move) {
                     setGame(gameCopy); // Update the game state with the new position
                     if (gameCopy.isCheck()) {
-                        setmsg("Check")
+                        setmsg("Check!")
+                    }
+                    else {
+                        setmsg('')
                     }
                     if (gameCopy.isCheckmate()) {
-                        (game.turn() == 'w') ? setmsg("White win by Check Mate") : setmsg("Black win by Check Mate")
+                        (game.turn() == 'w') ? setmsg("White win by Check Mate!") : setmsg("Black win by Check Mate!")
 
                     }
                     if (gameCopy.isDraw()) {
-                        setmsg("Draw")
+                        setmsg("Draw!")
                     }
                     if (gameCopy.isStalemate()) {
-                        setmsg("Stale Mate")
+                        setmsg("Stale Mate!")
                     }
                 }
             } catch (error) {
@@ -103,19 +106,19 @@ const Board = ({ user }) => {
                 return false; // Invalid move, ignore it
             }
             if (gameCopy.isCheck()) {
-                setmsg("Check")
+                setmsg("Check!")
             }
             else {
                 setmsg('')
             }
             if (gameCopy.isCheckmate()) {
-                (game.turn() == 'w') ? setmsg("White win by Check Mate") : setmsg("Black win by Check Mate")
+                (game.turn() == 'w') ? setmsg("White win by Check Mate!") : setmsg("Black win by Check Mate!")
             }
             if (gameCopy.isDraw()) {
-                setmsg("Draw")
+                setmsg("Draw!")
             }
             if (gameCopy.isStalemate()) {
-                setmsg("Stale Mate")
+                setmsg("Stale Mate!")
             }
 
 
@@ -135,23 +138,18 @@ const Board = ({ user }) => {
     };
     // Render the component
     return (
-        <div className="grid lg:grid-cols-2 grid-cols-1 gap-4">
-            <div className="h-full aspect-square pr-4 ">
+        <div className="h-full w-full flex justify-center items-center flex-col gap-2">
+
+            <div className="w-[400px] aspect-square">
                 <Chessboard
                     boardOrientation={user}
                     position={game.fen()}         // Set the board position based on the current game state
                     onPieceDrop={onDrop}          // Attach the onDrop function to handle piece moves
-                    customDarkSquareStyle={{ backgroundColor: '#22c55e' }}
-                    customLightSquareStyle={{ backgroundColor: '#f9fafb' }}
 
                 />
             </div>
+            <h4 className="text-xl font-semibold text-center ">{msg}</h4>
 
-            <div>
-                <h3>Best Move: {bestMove || "Calculating..."}</h3>
-                <h3>User MOve: {bestUseMove || "Wait..."}</h3>
-                <h4>{msg}</h4>
-            </div>
         </div>
     );
 };

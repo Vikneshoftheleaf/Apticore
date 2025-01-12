@@ -71,7 +71,7 @@ export default function QA({ questions }) {
                         </div>
 
                     </div>
-                    {showExplanation[question.id] && <div className="rounded-md bg-green-50 p-4 w-full"><div><h3 className="font-semibold text-green-500">Explanation: </h3> <p className="mt-2">{question.explanation}</p> </div></div>}
+                    {showExplanation[question.id] && <div className="rounded-md bg-green-50 p-4 w-full"><div><h3 className="font-semibold text-green-500">Solution: </h3> <p className="mt-2">{question.explanation}</p> </div></div>}
                     {showReport[question.id] &&
                         <div className="rounded-md bg-green-50 p-4 w-full">
                             <p >

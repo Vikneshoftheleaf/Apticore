@@ -1,0 +1,63 @@
+[
+    {
+      "id": 1,
+      "question": "You are managing a team project with a tight deadline. Two members have conflicting ideas about how to proceed. How do you decide which approach to take?",
+      "explanation": "First, gather the facts about both approaches, including potential risks, benefits, and resource requirements. Facilitate a discussion with the team to weigh the pros and cons. Choose the approach that aligns best with the project goals and timeline while addressing any major concerns collaboratively.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 2,
+      "question": "Your company is considering launching a new product, but there's a risk it might not perform well in the market. How do you decide whether to proceed?",
+      "explanation": "Conduct market research to understand customer demand and competition. Evaluate the potential return on investment (ROI) against the risks. If the data supports a strong market need and manageable risks, proceed with a pilot launch to test the waters before a full rollout.",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 3,
+      "question": "You find a wallet with cash and no identification in a public place. What do you do?",
+      "explanation": "Turn the wallet into the nearest lost-and-found or the police station. This ensures that the rightful owner has a chance to reclaim it while demonstrating integrity.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 4,
+      "question": "You are offered two job positions: one with higher pay but long hours and another with moderate pay and better work-life balance. How do you decide?",
+      "explanation": "Assess your current priorities and long-term goals. If financial growth is crucial, opt for the higher-paying job. If personal time and health are more important, choose the job with better work-life balance. Factor in future opportunities each job might bring.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 5,
+      "question": "Your best friend has asked you to lend them a significant amount of money, but you’re unsure if they can repay it. How do you handle this situation?",
+      "explanation": "Evaluate your financial stability and how losing the money might affect you. Have an open conversation with your friend about repayment terms. If unsure, offer non-monetary support instead of the full amount.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 6,
+      "question": "You need to choose between investing in a stable, low-return stock or a volatile, high-return option. What should you do?",
+      "explanation": "Consider your risk tolerance, investment goals, and time horizon. For long-term goals, diversify your portfolio with a mix of both. If you can't afford to lose money, lean towards the stable option.",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 7,
+      "question": "A team member repeatedly misses deadlines but is highly skilled and contributes significantly in other areas. How do you address this?",
+      "explanation": "Have a one-on-one discussion to understand the reasons for missed deadlines. Set clear expectations and offer support to improve time management. If the behavior persists, consider reassigning responsibilities or implementing a performance improvement plan.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 8,
+      "question": "Your friend is upset because of a misunderstanding you were involved in. How do you resolve it?",
+      "explanation": "Listen to their concerns without interrupting. Apologize sincerely if you were at fault. Clarify your intentions and suggest steps to prevent future misunderstandings. Ensure open communication moving forward.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 9,
+      "question": "You are given the task of selecting a vendor for an important project. One vendor is highly experienced but expensive, while another is affordable but less experienced. Which one do you choose?",
+      "explanation": "Analyze the project's critical requirements. If quality and expertise are non-negotiable, choose the experienced vendor. If the budget is tight and the project allows for flexibility, consider the affordable vendor while managing risks.",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 10,
+      "question": "You are leading a team brainstorming session, and one member dominates the conversation, preventing others from sharing ideas. What do you do?",
+      "explanation": "Politely acknowledge the dominating member's input and invite others to share their perspectives. Consider setting ground rules, such as time limits for speaking, to ensure everyone gets a chance to contribute.",
+      "difficulty": "Easy"
+    }
+  ]
+  

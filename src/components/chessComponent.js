@@ -25,9 +25,9 @@ export default function ChessComponent() {
     return (
         <div>
             {userColor == null ? (
-                <div>
-                    <h3>Select Your Chess Piece Color</h3>
-                    <div className="flex gap-2 mt-4">
+                <div className="flex w-full justify-center items-center flex-col pt-16">
+                    <h3 className="text-lg font-semibold">Select Your Chess Piece Color</h3>
+                    <div className="flex flex-col gap-2 mt-4">
                         <button
                             className="border flex gap-2 items-center px-4 py-2 rounded-md bg-white text-black"
                             onClick={() => handleSelectColor("white")}
